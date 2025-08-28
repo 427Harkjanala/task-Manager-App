@@ -1,0 +1,22 @@
+.taskForm {
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.textarea {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+.taskItem {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+}
+
+.taskList {
+  max-width: 600px;
+  margin: 0 auto;
+}
