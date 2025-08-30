@@ -16,8 +16,9 @@ const Header = () => {
 
   return (
     <header className={styles.header}>
-      <Link to="/">
+       <Link to="/" className={styles.brand}>
         <img src={Logo} alt="Logo" className={styles.logo} />
+         Task Manager
       </Link>
       <nav>
         {isAuthenticated ? (

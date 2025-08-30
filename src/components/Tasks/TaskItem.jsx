@@ -9,21 +9,24 @@ const TaskItem = ({ task }) => {
   const dispatch = useDispatch();
 
   const handleToggle = async () => {
-    const updated = { ...task, status: task.status === 'pending' ? 'completed' : 'pending' };
+    const updated = {
+      ...task,
+      status: task.status === 'pending' ? 'completed' : 'pending'
+    };
     try {
-      const response = await api.put(`/tasks/${task.id}`, updated);
+      const response = await api.put(`/tasks/${task._id}`, updated);
       dispatch(updateTask(response.data));
     } catch (err) {
-      console.error('Failed to update task');
+      console.error('Failed to update task', err);
     }
   };
 
   const handleDelete = async () => {
     try {
-      await api.delete(`/tasks/${task.id}`);
-      dispatch(deleteTask(task.id));
+      await api.delete(`/tasks/${task._id}`);
+      dispatch(deleteTask(task._id));
     } catch (err) {
-      console.error('Failed to delete task');
+      console.error('Failed to delete task', err);
     }
   };
 
