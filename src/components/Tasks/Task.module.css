@@ -1,0 +1,183 @@
+/* ====== Variables for Theme ====== */
+:root {
+  --bg-color: #0f172a;
+  --card-bg: rgba(255, 255, 255, 0.08);
+  --accent-color: #4f46e5;
+  --accent-hover: #4338ca;
+  --text-color: #f8fafc;
+  --muted-text: #94a3b8;
+  --border-radius: 14px;
+  --transition: all 0.3s ease;
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  --glass-blur: blur(12px);
+}
+
+/* ====== Task Form ====== */
+.taskForm {
+  max-width: 650px;
+  margin: 25px auto;
+  background: var(--card-bg);
+  backdrop-filter: var(--glass-blur);
+  padding: 25px 30px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  transition: var(--transition);
+}
+
+.taskForm:hover {
+  transform: scale(1.02);
+}
+
+/* ====== Input Fields ====== */
+.taskForm input,
+.taskForm textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-color);
+  font-size: 15px;
+  outline: none;
+  transition: var(--transition);
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.taskForm input:focus,
+.taskForm textarea:focus {
+  border-color: var(--accent-color);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 15px rgba(79, 70, 229, 0.5);
+}
+
+/* ====== Textarea ====== */
+.textarea {
+  min-height: 120px;
+  resize: none;
+  line-height: 1.5;
+}
+
+/* ====== Buttons ====== */
+.taskForm button {
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background: var(--accent-color);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4);
+}
+
+.taskForm button:hover {
+  background: var(--accent-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.6);
+}
+
+.taskForm button:disabled {
+  background: #64748b;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* ====== Task List ====== */
+.taskList {
+  max-width: 650px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* ====== Task Item ====== */
+.taskItem {
+  background: var(--card-bg);
+  backdrop-filter: var(--glass-blur);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: var(--transition);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.taskItem:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+/* ====== Task Title ====== */
+.taskItem h3 {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  margin: 0;
+}
+
+/* ====== Task Description ====== */
+.taskItem p {
+  margin: 4px 0;
+  color: var(--muted-text);
+  line-height: 1.4;
+}
+
+/* ====== Status Badge ====== */
+.taskItem .status {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: white;
+  width: fit-content;
+  background: #f59e0b; /* default yellow for pending */
+  transition: var(--transition);
+}
+
+.taskItem.completed .status {
+  background: #10b981; /* green for completed */
+}
+
+/* ====== Task Buttons ====== */
+.taskItem button {
+  padding: 10px 15px;
+  margin-right: 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: var(--accent-color);
+  color: #fff;
+  transition: var(--transition);
+  box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4);
+}
+
+.taskItem button:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+/* ====== Responsive Design ====== */
+@media (max-width: 768px) {
+  .taskForm,
+  .taskList {
+    max-width: 95%;
+    padding: 20px;
+  }
+
+  .taskItem {
+    padding: 15px;
+  }
+
+  .taskForm input,
+  .taskForm textarea {
+    font-size: 14px;
+  }
+}

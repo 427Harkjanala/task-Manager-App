@@ -1,0 +1,25 @@
+.page {
+  padding: 20px;
+  text-align: center;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.page h1 {
+  font-size: 6rem;
+  color: var(--background-dark);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px;
+}
+
+.page p {
+  font-size: 1.5rem;
+  color: var(--text-light);
+  background: var(--card-bg);
+  padding: 15px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
